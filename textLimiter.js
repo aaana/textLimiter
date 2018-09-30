@@ -8,6 +8,13 @@ $('.textLimiter').on('compositionend',function(){
     flag = true;
 
 })
+$('.textLimiter').blur(function(){
+    console.log("input");
+    var _this = this;
+    setTimeout(function(){
+        $(_this).next().text("");
+    },0)
+})
 $('.textLimiter').on('input',function(){
     console.log("input");
     var _this = this;
