@@ -8,6 +8,13 @@ $('.textLimiter').on('compositionend',function(){
     flag = true;
 
 })
+ $('.textLimiter').focus(function(){
+    console.log("focus");
+    var _this = this;
+    setTimeout(function(){
+        $(_this).next().text("还可以输入" + ($(_this).attr('maxlength') - $(_this).val().length) + "个字");
+    },0)
+})
 $('.textLimiter').blur(function(){
     console.log("input");
     var _this = this;
